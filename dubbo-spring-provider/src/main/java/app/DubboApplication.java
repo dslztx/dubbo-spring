@@ -1,28 +1,30 @@
 package app;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class DubboApplication {
+import lombok.extern.slf4j.Slf4j;
 
-    private static final Logger logger = LoggerFactory.getLogger(DubboApplication.class);
+@Slf4j
+public class DubboApplication {
 
     public static void main(String[] args) {
 
-        logger.info("Dubbo Application is starting");
+        log.info("dubbo application is starting");
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // 无需显示调用context.start()方法，ClassPathXmlApplicationContext会在创建后立即启动
         // context.start();
 
-        // dubbo在
-        // org.apache.dubbo.config.ServiceConfig.class:59
-        // org.apache.dubbo.config.ServiceConfig#export
-        // 走到这里已经依次完成：1）Bean的post-init方法（）初始化方法/@PostConstruct；2）dubbo服务初始化完成，并向注册中心注册（happens-before），详细后续可看源码
-        logger.info("Dubbo Application has started");
+        // 走到这里已经依次完成：
+        // 1、Bean的初始化，post-init方法 / @PostConstruct注解方法的执行
+        // 2、dubbo服务初始化完成，并向注册中心注册（具体源码入口可参见org.apache.dubbo.config.ServiceConfig#export）
+        // 即满足相应的happens-before条件
+        log.info("dubbo application has started");
 
+        // 保持主线程活，避免整个进程退出
         keepAppAlive();
     }
 
@@ -32,9 +34,9 @@ public class DubboApplication {
             public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(24 * 3600 * 1000L);
+                        TimeUnit.DAYS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        log.error("", e);
                     }
                 }
             }

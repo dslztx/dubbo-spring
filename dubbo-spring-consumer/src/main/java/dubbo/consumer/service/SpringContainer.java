@@ -1,10 +1,11 @@
 package dubbo.consumer.service;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import lombok.extern.slf4j.Slf4j;
 import me.dslztx.assist.util.ObjectAssist;
 import me.dslztx.assist.util.StringAssist;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @Slf4j
 public class SpringContainer {

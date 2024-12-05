@@ -12,11 +12,6 @@
     <artifactId>dubbo-spring-consumer</artifactId>
     <packaging>jar</packaging>
 
-    <!--    dubbo family-->
-    <!--    spring boot family-->
-    <!--    spring family-->
-    <!--   apache common utility family -->
-    <!--    others-->
     <dependencies>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
