@@ -27,7 +27,7 @@
         <me.dslztx.spring.version>5.3.18</me.dslztx.spring.version>
         <me.dslztx.curator.version>2.12.0</me.dslztx.curator.version>
         <me.dslztx.zookeeper.version>3.4.8</me.dslztx.zookeeper.version>
-        <me.dslztx.assist.version>3.0.12</me.dslztx.assist.version>
+        <me.dslztx.assist.version>3.0.61</me.dslztx.assist.version>
 
         <plugin-compiler.version>3.0</plugin-compiler.version>
         <plugin-compiler.compile.encoding>UTF-8</plugin-compiler.compile.encoding>
