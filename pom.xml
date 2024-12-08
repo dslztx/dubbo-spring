@@ -20,7 +20,7 @@
 
         <me.dslztx.lombok.version>1.16.18</me.dslztx.lombok.version>
         <me.dslztx.slf4j.version>1.7.12</me.dslztx.slf4j.version>
-        <me.dslztx.junit.version>4.10</me.dslztx.junit.version>
+        <me.dslztx.junit.version>4.13.1</me.dslztx.junit.version>
         <me.dslztx.mockito.version>2.20.0</me.dslztx.mockito.version>
 
         <me.dslztx.dubbo.version>2.7.8</me.dslztx.dubbo.version>
@@ -142,6 +142,7 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${plugin-compiler.version}</version>
                 <executions>
